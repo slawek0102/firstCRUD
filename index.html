@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main>
+
+    <header>
+        <img src="http://fenixdigital.net.br/teste/sprink2/wp-content/uploads/2015/02/img-full-width-slider-03-1200x300.jpg"
+             alt="">
+        <h1>My first CRUD</h1>
+
+    </header>
+
+    <article>
+
+        <table id="tablica">
+
+        </table>
+
+        <button onclick="dodajOsobe()">Dodaj Osobę</button>
+
+        <form action="http://localhost:3000/add" method="post">
+            First name:<br>
+            <input type="text" name="imie" value="Mickey">
+            <br>
+            Last name:<br>
+            <input type="text" name="nazwisko" value="Mouse">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </article>
+    <footer>
+        This is footer
+    </footer>
+</main>
+
+<script src="js.js"></script>
+</body>
+</html>
