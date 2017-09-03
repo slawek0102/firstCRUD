@@ -16,26 +16,20 @@
         <img src="http://fenixdigital.net.br/teste/sprink2/wp-content/uploads/2015/02/img-full-width-slider-03-1200x300.jpg"
              alt="">
         <h1>My first CRUD</h1>
-
     </header>
 
     <article>
-
-        <table id="tablica">
-
-        </table>
-
+        <table id="tablica"></table>
 
         <form action="http://localhost:3000/add" method="post">
-
-            <input type="text" name="imie" value="Mickey">
-            <input type="text" name="nazwisko" value="Mouse">
-            <input type="text" name="rok" value="1940">
+            <input type="text" name="imie" placeholder="First Name" required>
+            <input type="text" name="nazwisko" placeholder="Last Name" required>
+            <input type="date" name="rok" placeholder="Year" required>
             <br>
-
-            <input type="submit" value="Submit">
+            <input type="submit" value="Add Person" onsubmit="return false" >
         </form>
     </article>
+
     <footer>
         This is footer
     </footer>

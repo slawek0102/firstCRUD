@@ -13,9 +13,11 @@ app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     fs.readFile('json.json', 'utf8', (err, data) => {
+
         res.send(data);
     });
 });
+
 
 app.post('/add', function (req, res, next) {
 
@@ -23,9 +25,8 @@ app.post('/add', function (req, res, next) {
         let existingFileBody = data.substr(1,data.length-2);
         // let existingFileBodyLenght = data.length;
 
-
-
-        console.log('Dlugosc existingFileBody', existingFileBody);
+        // console.log('Dlugosc existingFileBody', existingFileBody);
+        // console.log('Body', data);
 
         let newFileBody = '['+existingFileBody +','+ JSON.stringify(req.body)+']';
 
@@ -33,7 +34,7 @@ app.post('/add', function (req, res, next) {
         });
     });
 
-
+    res.redirect('back')
 });
 
 app.listen(3000, function () {

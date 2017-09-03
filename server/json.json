@@ -14,5 +14,23 @@
   {
     "imie": "Tomasz",
     "nazwisko": "Marciniak"
+  },
+  {
+    "imie": "Jan",
+    "nazwisko": "Kowalski"
+  },
+  {
+    "imie": "Janicki",
+    "nazwisko": "Mouse"
+  },
+  {
+    "imie": "a",
+    "nazwisko": "a",
+    "rok": "2017-09-19"
+  },
+  {
+    "imie": "a",
+    "nazwisko": "a",
+    "rok": "2017-09-05"
   }
-,{"imie":"Jan","nazwisko":"Kowalski"},{"imie":"Janicki","nazwisko":"Mouse"}]
+,{"imie":"Slawomir","nazwisko":"Grzebyk","rok":"2017-09-05"}]
