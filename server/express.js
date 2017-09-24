@@ -1,40 +1,37 @@
 const express = require('express');
 const fs = require('fs');
-const os = require('os');
+// const os = require('os');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
 app.use(cors());
 
+app.use(express.static('client'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-app.get('/', function (req, res) {
-    fs.readFile('json.json', 'utf8', (err, data) => {
-
+app.get('/allData', function (req, res) {
+    fs.readFile('data.json', 'utf8', (err, data) => {
         res.send(data);
     });
 });
 
 
-app.post('/add', function (req, res, next) {
+app.post('/add', function (req, res) {
+    fs.readFile('data.json', 'utf8', (err, data) => {
+        let existingFileBody = data.substr(1, data.length - 2);
+        let newFileBody = '[' + existingFileBody + ',' + JSON.stringify(req.body) + ']';
+        fs.writeFile('data.json', newFileBody, function (er) {
 
-    fs.readFile('json.json', 'utf8', (err, data) => {
-        let existingFileBody = data.substr(1,data.length-2);
-        // let existingFileBodyLenght = data.length;
+            res.redirect('back');
+            console.log(JSON.stringify(req.body));
+            res.json(req.body)
 
-        // console.log('Dlugosc existingFileBody', existingFileBody);
-        // console.log('Body', data);
-
-        let newFileBody = '['+existingFileBody +','+ JSON.stringify(req.body)+']';
-
-        fs.writeFile('json.json', newFileBody, function (er) {
         });
     });
 
-    res.redirect('back')
 });
 
 app.listen(3000, function () {

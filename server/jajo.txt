@@ -1,1 +1,0 @@
-{"imie":"Mickey","nazwisko":"Mouse"}
